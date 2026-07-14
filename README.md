@@ -18,9 +18,7 @@ This is a solution to the [Recipe page challenge on Frontend Mentor](https://www
 
 ### Screenshot
 
-![](design\desktop-design.jpg)
-
-*(Note: Don't forget to add a screenshot of your finished design to the root folder and name it `screenshot.jpg`, or update this path!)*
+design\desktop-design.jpg
 
 ### Links
 
