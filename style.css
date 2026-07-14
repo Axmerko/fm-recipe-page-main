@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f3e6d8;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+}
+
+.card {
+  background-color: #ffffff;
+  max-width: 700px;
+  width: calc(100% - 48px);
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.photoAndTitle img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  display: block;
+}
+
