@@ -1,25 +1,58 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   background-color: #f3e6d8;
-  margin: 0;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Inter", sans-serif;
+  font-family: "Outfit", sans-serif;
+  color: #312e2c;
+  padding: 40px 20px;
 }
 
 .card {
   background-color: #ffffff;
-  max-width: 700px;
-  width: calc(100% - 48px);
-  border-radius: 20px;
+  max-width: 736px;
+  width: 100%;
+  border-radius: 24px;
   padding: 40px;
   display: flex;
   flex-direction: column;
+  gap: 32px;
+}
+
+h1,
+h2 {
+  font-family: "Young Serif", serif;
+  font-weight: 400;
+}
+
+h1 {
+  color: #312e2c;
+  font-size: 2.5rem;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+h2 {
+  color: #854632;
+  font-size: 1.75rem;
+  margin-bottom: 24px;
+}
+
+h3 {
+  color: #7a284e;
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+}
+
+p {
+  line-height: 1.5;
 }
 
 .photoAndTitle img {
@@ -30,3 +63,105 @@ body {
   display: block;
 }
 
+.preparation {
+  background-color: #fff7fc;
+  padding: 24px 32px;
+  border-radius: 12px;
+}
+
+.preparation ul {
+  list-style-type: disc;
+  padding-left: 16px;
+}
+
+.preparation li {
+  margin-bottom: 12px;
+  padding-left: 16px;
+}
+
+.preparation li:last-child {
+  margin-bottom: 0;
+}
+
+.preparation li::marker {
+  color: #7a284e;
+}
+
+.preparation li b,
+.preparation li strong {
+  color: #312e2c;
+}
+
+.ingredients ul,
+.instructions ol {
+  padding-left: 16px;
+}
+
+.ingredients li,
+.instructions li {
+  margin-bottom: 12px;
+  padding-left: 16px;
+  line-height: 1.5;
+}
+
+.ingredients li:last-child,
+.instructions li:last-child {
+  margin-bottom: 0;
+}
+
+.ingredients li::marker,
+.instructions li::marker {
+  color: #854632;
+  font-weight: bold;
+}
+
+.ingredients,
+.instructions {
+  border-bottom: 1px solid #e3ddd7;
+  padding-bottom: 32px;
+}
+
+.nutrition p {
+  margin-bottom: 24px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 16px 0;
+  border-bottom: 1px solid #e3ddd7;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+td:first-child {
+  padding-left: 32px;
+}
+
+td:last-child {
+  color: #854632;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+  }
+  .card {
+    border-radius: 0;
+    padding: 32px;
+  }
+  .photoAndTitle img {
+    border-radius: 0;
+    margin: -32px -32px 32px -32px;
+    width: calc(100% + 64px);
+  }
+  h1 {
+    font-size: 2.2rem;
+  }
+}

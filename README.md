@@ -1,102 +1,104 @@
-# Frontend Mentor - Recipe page
+# Frontend Mentor - Recipe page solution
 
-![Design preview for the Recipe page coding challenge](./preview.jpg)
+This is a solution to the [Recipe page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/recipe-page-KiTsR8QQKm). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [AI Collaboration](#ai-collaboration)
+- [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Overview
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+### Screenshot
 
-## The challenge
+![](design\desktop-design.jpg)
 
-Your challenge is to build out this recipe page and get it looking as close to the design as possible.
+*(Note: Don't forget to add a screenshot of your finished design to the root folder and name it `screenshot.jpg`, or update this path!)*
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+### Links
 
-### Want some support on the challenge? 
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-[Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+## My process
 
-## Where to find everything
+### Built with
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- Mobile-first workflow (via media queries)
+- [Google Fonts](https://fonts.google.com/) - Outfit & Young Serif
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+### What I learned
 
-If you would like the Figma design file to gain experience using professional tools and build more accurate projects faster, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+Working on this project reinforced several core CSS concepts for me. I spent a lot of time perfecting the layout and fixing small syntax issues that were breaking my code formatter (Prettier). 
 
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
+Here are some specific things I learned and applied:
 
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
+**1. CSS Selectors and the Comma Trap:**
+I realized that using a comma in CSS creates entirely independent rules. Initially, I tried to target `h1` and `h2` inside a specific container using `.photoAndTitle h1, h2`, but this inadvertently targeted *all* `h2` elements on the page. I learned to separate them properly or structure my typography globally.
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+```css
+/* Global typography approach */
+h1 {
+  font-family: "Young Serif", serif;
+  color: #312e2c;
+}
 
-## Using AI coding assistants
+h2 {
+  font-family: "Young Serif", serif;
+  color: #854632; 
+}
+```
 
-We've included two files to help you if you're using AI coding assistants (like Claude, GitHub Copilot, Cursor, etc.) while working on this challenge:
+**2. Styling List Markers:**
+I learned how to target and style the default bullets and numbers in lists using the `::marker` pseudo-element without needing complex spans or custom images.
 
-- `AGENTS.md` - Contains detailed instructions for AI assistants on how to help you with this challenge. It's tailored to this challenge's difficulty level, so the AI will provide guidance appropriate to your learning stage—offering more support for beginner challenges and encouraging more independence on advanced ones.
-- `CLAUDE.md` - A pointer file that directs Claude-based tools to the AGENTS.md instructions.
+```css
+.preparation li::marker {
+  color: #7a284e; 
+}
 
-**How to use them:** You don't need to do anything! These files are automatically detected by most AI coding tools. The AI will read them and adjust its behavior to be a better learning partner—guiding you toward solutions rather than just giving you the answers.
+.ingredients li::marker, .instructions li::marker {
+  color: #854632;
+  font-weight: bold;
+}
+```
 
-**Note:** These files are designed to help you *learn*, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
+**3. Responsive Images within Padding:**
+I learned how to make an image fully responsive within a padded card, ensuring it scales correctly without breaking its aspect ratio or overflowing the container.
 
-## Building your project
+```css
+.photoAndTitle img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+```
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+### Continued development
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+Moving forward, I want to speed up my HTML/CSS workflow. While I appreciate learning how to execute a pixel-perfect design, I plan to dedicate more of my upcoming study time to Codecademy to focus on programming logic and JavaScript, moving beyond purely visual structuring. 
 
-## Deploying your project
+### AI Collaboration
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+- **Tool used:** Google's AI Assistant (Gemini)
+- **How I used it:** - **Debugging:** I used the AI to help me parse Prettier error logs. It quickly pointed out unclosed HTML tags (like a missing `rel` attribute in a `<link>` tag) and stray characters (like an accidental `/` in my CSS) that were preventing my code from formatting.
+  - **Concept Explanation:** The AI helped explain CSS inheritance, specifically how to load two different Google Fonts and apply them cleanly to headings versus body text.
+  - **Code Generation:** When I got bogged down by CSS styling and wanted to move on to my coding courses, I collaborated with the AI to generate the final layout and spacing adjustments based on my existing HTML structure.
+- **What worked well:** The AI was excellent at spotting tiny syntax errors that are easy to miss with the human eye and explaining *why* certain CSS rules weren't behaving as expected.
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+## Author
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://www.frontendmentor.io/guides/hosting-your-solution).
-
-## Create a custom `README.md`
-
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
-
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
-
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
-
-## Submitting your solution
-
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://www.frontendmentor.io/guides/how-to-submit-solutions) for tips on how to do this.
-
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of our [community](https://www.frontendmentor.io/community). 
-2. Share on [X (formerly Twitter)](https://x.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in your post. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on [LinkedIn](https://www.linkedin.com/company/frontend-mentor/).
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
+-Miroslav Adrian Axmann
+- GitHub - [@Axmerko](https://github.com/Axmerko)
+- Frontend Mentor - [@Axmerko](https://www.frontendmentor.io/profile/Axmerko)
